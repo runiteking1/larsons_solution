@@ -1,0 +1,61 @@
+\setcounter{Exercise}{7}
+\begin{Exercise}
+	The hint is a pretty big one; if we use it, we arrive at a polynomial of the form $(y+1)^7 - 2(y+1)^5 + 10(y+1)^2 - 1$.
+	If we naively expand everything, we will see that the corresponding equation is of the form
+	\begin{align}
+		y^7 + 7y^6 + 19y^5 + 25y^4 + 15y^3 + 11y^2 + 17y + 18
+	\end{align}
+	This polynomial has coefficients bigger than one, hence for any positive $y$, our polynomial will be greater than 0.\qed
+\end{Exercise}
+
+\begin{Exercise}
+	The simplest way to do this is to recast this problem as a combinatorics problem. 
+	Consider viewing the number $n$ as $n$ individual stones and consider the gaps in between.
+	There is a one-to-one correspondence between choosing whether we want to select the gap (thus partitioning up the stones)
+	and the quantity we are looking for. 
+
+	For example, in the case of $n=3$, the case of 1+2 would be to select the first gap and not select the second. 
+	The result is immediate after this recasting. \qed
+\end{Exercise}
+
+\begin{Exercise}
+	Once again, view this an a combinatorics problem, but more sticks-and-balls type.\footnote{\url{http://www.math.illinois.edu/~hildebr/putnam/training/combinatorial13-2sol.pdf}} Imagine expressing the number 10 as ten stones and having four sticks
+	which can partition the stones into five. Since we care about order, then it's simply the number of ways we can order the
+	the balls and four sticks $\binom{10+4}{4}$. 
+
+	See the footnotes for a bit more detailed solution on how the whole sticks-and-ball problems work.\qed
+\end{Exercise}
+
+\begin{Exercise}
+	Using the hint, we can view this problem as a geometry exercise.
+	The first expression $x^2 = y^2$ is simply two intersecting lines
+	at the origin, while the second expression is that of a circle
+	centered at $(a, 0)$ with radius 1. 
+
+	From this, it is easy to see that there are four solutions when
+	$\{-\sqrt{2} < a < \sqrt{2}\} - {-1, 1}$, three solutions at ${1,-1}$, two solutions $a=\pm\sqrt{2}$, and zero solutions elsewhere. Nowhere is there only one solution
+	due to symmetry of the problem. \qed
+\end{Exercise}
+
+\begin{Exercise}
+	TODO
+\end{Exercise}
+
+\begin{Exercise}
+	TODO
+\end{Exercise}
+
+\begin{Exercise}
+	First, some notation.
+	Let $a,b,c$ be the sides which correspond to $p_1, p_2, p_3$ respectively. 
+	We use the hint:
+	\begin{align}
+		2A &= ap_1 = bp_2 = cp_3 \\
+		2A &= r(a + b + c)
+	\end{align}
+
+	The first equation comes from basic geometry, while the second comes form noticing that the incircle is tangent to each side; hence a right angle with each side.
+
+	Now, we simply substitue the $a = \frac{2A}{p_1}$ into the second equation, along with $b, c$.
+	Cancelling the $2A$, from both sides of the equation and moving $r$ to the other side gives us the answer. \qed
+\end{Exercise}

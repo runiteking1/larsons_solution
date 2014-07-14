@@ -1,0 +1,125 @@
+\setcounter{Exercise}{5}
+\begin{Exercise}
+We just have to show that there exists an infinite number of the digit 6 in the sequence, and not to find a closed-form expression of it. If we extend the sequence, it should be of the following form $2,7,1,4,7,4,2,8,2,8,8,1,6,1,6,1,6,6,4,8,6,6,6,6,\ldots$ 
+
+The 4 consecutive 6's seems intriguing, so lets study what happens when we expand it out according to our rule: $3,6,3,6,3,6,3,6$. 
+This is good! Four consecutive 6's produces four more 6's, but the next iteration doesn't seem so promising: $1,8,1,8,1,8,1,8,1,8,1,8,1,8$. There are no 6's this time. 
+
+Let's not give up so early, here are the next few iterations (with truncation): 
+\begin{align}
+8,8,\ldots, 8 \rightarrow 6,4,6,4,\ldots,6,4 \rightarrow 2,4,2,4,\ldots, 2,4 \rightarrow 8,8,\ldots, 8. 
+\end{align}
+This is great news! We actually found a cycle which gaurentees us more 6's if we follow it, and hence the exercise is proven (informally). \qed
+\end{Exercise}
+
+\begin{Exercise}
+All prime numbers satisfy the property that the first $n-1$ digit of $S_n$ are $n$. This pattern is fairly obvious if one
+starts to extend the $S_n$ sequences out a bit more. The first conjecture might be that all odd numbers satisfy the property,
+but the case of $S_9$ is a counter-example. 
+
+The proof is as follows: we first note that if $n$ is in $S_n$, then it will be incremented to $n+1$ in $S_{n+1}$. 
+Next, note that if an element of the sequence is a prime number, it can only increment by one if $n$ (of the index $S_n$)
+ is the same prime number.
+
+If we put these two facts together, we see that given a prime $p$, the first $p-1$ numbers will increment along with $S_n$ by
+the first statement to reach $p$ as $n \rightarrow p$. 
+The speed of incrementation might be different, but we really don't care about that by the second statement. 
+If an element of the sequence reached $p$ already, then it'll stay at $p$ since no other numbers will divide it.
+
+Note that the $p, p+1, p+2, \ldots$th numbers will be greater than $p$ by the $S_2$. \qed
+\end{Exercise}
+
+\begin{Exercise}
+The intuition for this problem is quite easy to grasp as the patterns are laid out before our eyes.
+I believe the hard part is putting that solution to words. 
+There's one thing that I used in proving (albeit less rigorous than I like) this problem, which is that the 
+alternate sum of binomial coefficients is 0. This is a commonly used fact, and is quite useful at times. 
+
+Start with $n=3$ for a concrete example. The following sequence is an acceptable solution: 
+\begin{align}
+	01212123
+	\label{eqn:118}
+\end{align}
+where each digit signifies the index in Pascal's triangle. We start with the null set, then pick any set with one element 
+and alternate with subsets of two elements and so on.
+The algorithm is a greedy one, and we wish to show it satisfies all the conditions.
+
+Condition one is easy to show, but why are we guaranteed that conditions (ii) and (iii) of the problem is satisfied?
+For condition (iii), note that if we simply alternate in the order of the elements, we will always be able to alternate between
+a subset of size $m$ and $m+1$. So in our small example, we would add the subset of just element 1, then add element 2, take 
+away element 1, add element 3 and so on.
+
+To see that we do indeed use every subset, we need to put our algorithm into numbers. Using our small example again,
+we start with the standard Pascal triangle row: 
+\begin{align}
+	1\| 3 \| 3 \| 1.
+\end{align}
+This means our sequence needs to have one 0, three 1's, three 2's and one 3 (like in equation~\ref{eqn:118}).
+If we alternate between the $\binom{3}{0}$ and $\binom{3}{1}$ we will end up with this:
+\begin{align}
+	0\| \dot{2} \| 3 \| 1
+\end{align}
+where the dot indicates the size of the subset of the end of our sequence. 
+Alternating between $\binom{3}{1}$ and $\binom{3}{2}$ will result in 
+\begin{align}
+	0\| 0 \| \dot{0} \| 1.
+\end{align}
+This configuration means that our sequence's last element is of size 2, and we have one last subset of size 3 to take care of.
+At the end, all our numbers will be 0; this is what we want to capture in our proof.
+
+If one continues this pattern in general for all $n$, we will have the following equation
+\begin{align}
+	{n \choose n} - \left( {n\choose n-1} - \left( {n \choose n-2} - \cdots \left( {n \choose 1} - {n \choose 0} \right) +1 \right) + \cdots +1 \right)
+\end{align}
+I realize that's a big jump, but try to convince yourself that if you work out the pattern, it's what you see. 
+There's really no work left, as that equation simplifies to the alternating sum of binomial coefficients which is 0! 
+This proves\footnote{Not that rigorous I suppose} that our algorithm will satisfy all three conditions. \qed
+\end{Exercise}
+
+\begin{Exercise}
+Two immediate ways to solve this: 
+\begin{itemize}
+	\item Look at the Pascal triangle in terms of even-odd. You'll quickly notice a pattern that the odd binomial
+	coefficients resemble a Sierpinski triangle. It'll be extremely tedious, but I think given enough patience and
+	organization one can count them in terms of the pattern.
+	\item Note the following pattern starting from row 1: $1,2,2,4,2,4,4,8,2$. Instead of looking at the powers of 2,
+	maybe the exponents will give us more insight: $0,1,1,2,1,2,2,3,1$. An \emph{extremely} astute observer will
+	note that it's the number of ones in the binary expansion of the row number! For example, row 3 (1,3,3,1) is 11 in 
+	binary so the number of odd coefficients is $2^2$ for the number of 1s in the binary representation. 
+
+	I remembered this trick back in high school, so don't fret if you can't figure this out. The theorem which this is based
+	on is Lucas' theorem.\footnote{\url{http://en.wikipedia.org/wiki/Lucas'\_theorem}} \qed
+\end{itemize}
+\end{Exercise}
+
+\begin{Exercise}
+	I'm not sure how to cleverly solve this one. My approach was to look at the equations in various mods (i.e. 2, 4, and 8) 
+	and see what I can clobber together. I couldn't prove that all such primes are able to be expressed in the forms though.
+\end{Exercise}
+
+\begin{Exercise}
+	The conjecture should be fairly simple to make; try writing a few terms of the sequence starting with $1/2, 1, 2, -1$. 
+	The limit seems to be 1, which is easily proved with a technique that's covered in 7.6.4 as mentioned in the problem. 
+
+	In order to prove this though, one can approach the problem like 1.1.3. We note that $a_2 = \frac{1}{2-a_1}$. 
+	Continuing the series:
+	\begin{align}
+		a_3 &= \frac{1}{2-a_2} = \frac{1}{2 - \frac{1}{2-a_1}} = \frac{2-a_1}{3-2a_1} \\
+		a_4 &= \frac{3-2a_1}{4-3a_1} \\
+		a_5 &= \frac{4-3a_1}{5-4a_1}
+	\end{align}
+	The patterns is quite obvious now: 
+	\begin{align}
+		a_n &= \frac{(n-1) - (n-2)a_1}{n - (n-1)a_1}
+	\end{align}
+	This can be proven by induction quite easily (but a pain to type out). The limit of that as $n$ approaches infinity
+	is 1. \qed
+\end{Exercise}
+
+\begin{Exercise}
+	This took a considerable amount of time to proof, from just getting a feel of the problem to finally seeing a solution.
+	The key was the expression $(a\cdot b) \cdot ((a\cdot b) \cdot b)$. Note that we can express this in two forms! 
+	It can equal $b$ (by considering $a\cdot b$ together) or $(a\cdot b) \cdot a$ (by considering the right most parenthesis first).
+
+	Now that we have $b = (a\cdot b) \cdot a$, we simply apply $a$ to both sides to get $b \cdot a = ((a\cdot b) \cdot a) \cdot a = a \cdot b$. \qed
+\end{Exercise}
