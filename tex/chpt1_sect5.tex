@@ -74,3 +74,38 @@ Now:
 	this is a good enough sketch I think. \qed
 \end{Exercise}
 
+\begin{Exercise}
+	\begin{enumerate}
+		\item Average rate by definition means the total distance over total time. 
+		The key point to note is that the time spent driving from point $A$ to $B$ will be \emph{more} then the other way around, 
+		since the speed is slower. 
+		Henyce, the average rate is less than 50 miles per hour. 
+
+		Algebraically, let $x$ be the distance between $A$ and $B$.
+		We have the following:
+		\begin{align}
+			s &= \frac{d}{t} \\
+			&= \frac{2x}{\frac{x}{40} + \frac{x}{60}} \\
+			&= \frac{2(2400)}{40 + 60}
+		\end{align}
+		and we see that it's the harmonic average of the two speeds. 
+		The cool thing is that the distance doesn't matter at all! \qed
+
+		\item Of course, we see physically that the two must equal, but we should do this algebraically.
+		We'll do this the hard way, by keeping both the amounts of liquid and the volume of the spoon as variables (instead of scaling the spoon volume to 1).
+
+		Let $V$ be the volume of the coffee (and the cup of cream), then let $x$ be the volume of the spoon. 
+		The initial scoop will result in $V$ coffee and $x$ cream in the coffee cup and $V-x$ cream in the cream cup.
+		Now the scoop from the coffee cup will contain $x \cdot \frac{x}{V+x}$  amount of cream, and $x \cdot \frac{V}{V+x}$ amount of coffee.
+
+		This means that the final amount of cream left in the coffee cup is $x - x\cdot \frac{x}{V+x}$, while the total amount of 
+		coffee in the coffee cup is $0 + x\cdot \frac{V}{V+x}$. 
+		One can verify easily that they are equal. \qed
+
+		\item Let the radius of the Earth in feet be $R$, then the original length of the rope is $2\pi R$.
+		Extending that string by 6 feet will result in the new length to be $2\pi R + 6$. 
+
+		We wish to find the new radius which have that value as its circumference; this is done by dividing by $2\pi$.
+		Thus, the string is lifted by $\frac{6}{2\pi}$ total feet, which is around 1 foot and greater than an inch. \qed
+	\end{enumerate}
+\end{Exercise}
