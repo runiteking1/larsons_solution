@@ -109,3 +109,19 @@ Now:
 		Thus, the string is lifted by $\frac{6}{2\pi}$ total feet, which is around 1 foot and greater than an inch. \qed
 	\end{enumerate}
 \end{Exercise}
+
+\begin{Exercise}
+	\begin{enumerate}
+		\item Note the residuals of the odd numbers squared in mod 8 is always 1. 
+		We also know that there exists $m, n$ such that $m^2 + n^2 = p$ for $p$ prime and one more than a multiple of 8.
+		If we simply examine the residuals, we see that both one of $m, n$ must be odd and the other must be 0 or 4 mod 8. 
+		In both cases, we can rewrite $n := 4y$ (i.e. it's a multiple of 4), and thus we have our form.\qed
+
+		\item Similar to above, we see that $4y^2$ will result in residuals of 0 or 4, meaning that it \emph{has} to be of 4 mod 8.
+		This is because there is not a residual of 5 in the mod 8! 
+
+		Since the residual of 4 only comes in when $n$ is divisible by 2, we can rewrite $n:=2y$.
+
+		The first term is kind of a mis-nomer... as it can be simply $x^2 + 4y^2$... \qed
+	\end{enumerate}
+\end{Exercise}
