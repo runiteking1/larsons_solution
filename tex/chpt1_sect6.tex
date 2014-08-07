@@ -17,3 +17,19 @@
 		Now by symmetry, we can easily see that the two equations are equal (if you don't trust me, just expand it out).
 	\end{enumerate}
 \end{Exercise}
+
+\begin{Exercise}
+	This is a hard figure to draw, so I'll introduce some notation for me to not draw it. 
+	We'll use ordered pair notation, where the first coordinate is which row from the bottom, and the second coordinate is which column from the left.
+	For example, $(0,0)$ would be the bottom-right most penny, $(0,1)$ would be to the right of it.
+	Now $(1,0)$ would be the first penny in the second row meaning that $(5,0)$ is the only element with 5 in the first coordinate (since there's only one penny on the fifth row).
+	Be aware this is zero-indexing.
+
+	We will prove by contradiction and let's examine the inner-most triangle $(1,1), (1,2), (2,1)$. 
+	WLOG let's say that $(2,1)$ is of the color white, and the other two points are black by pigeon-hole principal.
+	This then forces $(0,2)$ to be also white as if it's black, then $(0,2), (1,1), (1,2)$ will form a triangle.
+
+	Now note that $(1, 0), (1, 3)$ MUST be black also as there's a equilateral triangle with the color white with $(1,0),(2,1),(0,2)$ (and by symmetry, the other one too).
+	Finally, if we look at $(0,1)$ or $(0,3)$, they can't be black or white! 
+	Thus, contradiction and we are done. \qed
+\end{Exercise}
