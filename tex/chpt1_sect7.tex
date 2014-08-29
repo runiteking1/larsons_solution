@@ -1,0 +1,41 @@
+\setcounter{Exercise}{3}
+\begin{Exercise}
+\end{Exercise}
+
+\begin{Exercise}
+	Began by noting that if the denominators are both positive, then the inequality will never be true. 
+	For simplicity, let's break up the problem into two cases:
+	\begin{enumerate}
+		\item $x-1 < 0 < x+1 \rightarrow -1 < x < 1$
+		\item $x-1 < x + 1 < 0$.
+	\end{enumerate}
+
+	Let's consider the second case first, which is easily solved
+	\begin{align*}
+		\frac{3}{x-1} &< \frac{2}{x+1} \\
+		3x + 3 &< 2x - 2 \\
+		x &< -5
+	\end{align*}
+
+	As for the first case, just be careful to flip the sign
+	\begin{align*}
+		\frac{3(x+1)}{x-1} &< 2 \\
+		3x + 3 &> 2x - 2 \\
+		x &> -5
+	\end{align*}
+	and note that we have the constraint that $|x| < 1$. \qed
+\end{Exercise}
+
+\begin{Exercise}
+\end{Exercise}
+\begin{Exercise}
+\end{Exercise}
+
+\begin{Exercise}
+	Let's start with working out the base cases of 0 and 1.
+	They are $F(1)^2 - F(1) = 2$ and $F(0)^2 - F(0) = 0$.
+	Obviously, there's two answers for each of the equations above, but checking each case reveals that $F(1) = 2, F(0) = 1$.
+
+	Now it's easy to prove that $F(x)=x+1$ for all integers by $F(x)F(1) - F(x) = 2F(x) - F(x) = F(x) = x + 1$.
+	Heck, using this argument it extends to all the reals! \qed
+\end{Exercise}

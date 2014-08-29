@@ -5,3 +5,4 @@
 \contentsline {section}{\numberline {1.4}Modify the Problem}{11}{section.1.4}
 \contentsline {section}{\numberline {1.5}Choose Effective Notation}{11}{section.1.5}
 \contentsline {section}{\numberline {1.6}Exploit Symmetry}{15}{section.1.6}
+\contentsline {section}{\numberline {1.7}Divide into Cases}{17}{section.1.7}
